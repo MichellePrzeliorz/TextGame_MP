@@ -5,7 +5,7 @@ using UnityEngine;
 public class TextGame : MonoBehaviour
 {
     int min = 1;
-    int max = 1000;
+    int max = 1001;
     int shoot = 500;
 
     // Program zgaduje nasza liczbe, ktora sobie wymyslilismy z konkretnego przedzialu
@@ -26,6 +26,7 @@ public class TextGame : MonoBehaviour
             min = shoot;
             shoot = (min + max) / 2;
             Debug.Log("Is your number equal/greater/less than" + shoot + " ?");
+
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
@@ -40,4 +41,7 @@ public class TextGame : MonoBehaviour
             Debug.Log("Got it!");
         }
     }
+    
+
+
 }
