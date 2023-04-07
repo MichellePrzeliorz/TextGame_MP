@@ -8,10 +8,11 @@ public class TextGame : MonoBehaviour
     int max = 1001;
     int shoot = 500;
 
+
     // Program zgaduje nasza liczbe, ktora sobie wymyslilismy z konkretnego przedzialu
     void Start()
     {
-       
+
         Debug.Log("Welcome to the game! Think about a number from 1 to 1000");
         Debug.Log("Is your number equal/greater/less than 500?");
         //print string
@@ -24,16 +25,14 @@ public class TextGame : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             min = shoot;
-            shoot = (min + max) / 2;
-            Debug.Log("Is your number equal/greater/less than" + shoot + " ?");
+            NextShoot();
 
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             max = shoot;
-            shoot = (min + max) / 2;
-            Debug.Log("Is your number equal/greater/less than" + shoot + " ?");
+            NextShoot();
         }
 
         if (Input.GetKeyDown(KeyCode.Return))
@@ -41,7 +40,13 @@ public class TextGame : MonoBehaviour
             Debug.Log("Got it!");
         }
     }
-    
 
+    void NextShoot()
+    {
+        shoot = (min + max) / 2;
+        Debug.Log("Is your number equal/greater/less than " + shoot + " ?");
+    }
+   
 
+  
 }
